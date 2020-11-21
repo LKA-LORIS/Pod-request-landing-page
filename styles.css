@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-size: 15px;
+    font-family: 'Chivo', sans-serif;
+    background-color: #121725;
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+/* container */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    min-height: 100vh;
+    max-width: 1315px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* HERO INNER */
+.hero-inner {
+    position: relative;
+    margin-left: 40px;
+}
+
+/* HERO LOGO */
+.header-logo {
+    position: absolute;
+    top: -28px;
+    left: 0;
+}
+
+/* HERO COPY */
+
+.hero-copy {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: 723px;
+    width: 100%;
+    background-color: coral;
+    z-index: 1;
+}
+
+.hero-copy h1 {
+    font-size: 52px;
+    font-weight: 300;
+    color: #54E6AF;
+    margin: 88px 0 24px 0;
+    text-transform: uppercase;
+}
+
+.hero-copy h1 span {
+    display: block;
+    color: #FFFFFF;
+}
+
+.hero-copy p {
+    max-width: 445px;
+}
+
+.hero-copy form {
+    margin: 40px 0 0 0;
+    max-width: 427px;
+}
+
+/* HERO ILLUSTRATION*/
+
+.hero-illustration {
+    position: relative;
+}
+
+.hero-illustration img {
+    margin-left: auto;
+}
+
+.hero-illustration picture {}
+
+
+@media screen and (max-width:480px) {
+
+    .hero-illustration picture {
+        display: none;
+    }
+
+    .hero-illustration .testmobile {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        background-image: url(./images/pod-hero-mobile.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+}
+
+
+
+/* HERO BRANDS */
+.hero-brands {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+}
+
+@media screen and (max-width:768px) {}
+
+.test {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
