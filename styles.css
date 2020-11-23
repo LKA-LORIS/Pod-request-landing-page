@@ -6,8 +6,10 @@
 
 html,
 body {
+    position: relative;
     margin: 0 auto;
     padding: 0;
+    height: 100%;
     font-size: 15px;
     font-family: 'Chivo', sans-serif;
     background-color: #121725;
@@ -19,45 +21,59 @@ img {
     max-width: 100%;
 }
 
-/* container */
-
 .container {
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    position: relative;
-    min-height: 100vh;
-    max-width: 1315px;
     margin: 0 auto;
+    height: 100%;
     width: 100%;
 }
 
-/* HERO INNER */
-.hero-inner {
+.inner-hero {
     position: relative;
-    margin-left: 40px;
-}
-
-/* HERO LOGO */
-.header-logo {
-    position: absolute;
-    top: -28px;
-    left: 0;
-}
-
-/* HERO COPY */
-
-.hero-copy {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    max-width: 723px;
+    height: auto;
     width: 100%;
-    background-color: coral;
-    z-index: 1;
+    padding: 28px 0 0 0;
+    margin: auto;
 }
 
-.hero-copy h1 {
+.inner-hero:after {
+    content:'';
+    height: 104px;
+    width: 232px;
+    position: absolute;
+    top:calc(100% - 52px);
+    right:0;
+    background-image: url(./images/pod-shape.svg);
+    background-repeat: no-repeat;
+}
+
+.hero-illustration img {
+    margin-left: auto;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 165px;
+    bottom: 0;
+    height: auto;
+    width: auto;
+}
+
+section header {}
+
+section .hero-copy {
+    width: 723px;
+    max-width: 100%;
+    margin-top: auto;
+    background-color: #121725;
+}
+
+section .hero-copy h1 {
     font-size: 52px;
     font-weight: 300;
     color: #54E6AF;
@@ -65,71 +81,190 @@ img {
     text-transform: uppercase;
 }
 
-.hero-copy h1 span {
+section .hero-copy h1 span {
     display: block;
     color: #FFFFFF;
 }
 
-.hero-copy p {
+section .hero-copy p {
+    font-size:18px;
+    line-height: 28px;
+    font-weight: 300;
     max-width: 445px;
+    color:#C2CBE5;
 }
 
-.hero-copy form {
+section .hero-copy form {
+    position:relative;
     margin: 40px 0 0 0;
     max-width: 427px;
 }
 
-/* HERO ILLUSTRATION*/
-
-.hero-illustration {
-    position: relative;
+section .hero-copy form input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 174px 14px 32px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 28px;
+    width:100%;
+    border: none;
+    border-radius: 28px;
+    color:#FFFFFF;
+    background-color: #2C344B;
 }
 
-.hero-illustration img {
-    margin-left: auto;
+section .hero-copy form input::placeholder {
+    opacity: 0.5;
+    color:#FFFFFF;
+} 
+
+section .hero-copy form button {
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    right: 5px;
+    font-size: 14px;
+    color: #121725;
+    font-weight: 700;
+    line-height: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #54E6AF;
+    border:none;
+    border-radius: 28px;
+    padding: 9px;
+    min-width: 162px;
 }
 
-.hero-illustration picture {}
+section .hero-copy .hero-brands {
+    list-style-type: none;
+    padding:0;
+    display: flex;
+    align-items: center;
+    margin-top: 64px;
+    margin-bottom: 0;
+}
 
+section .hero-copy .hero-brands li + li {
+    margin-left: 40px;
+}
 
-@media screen and (max-width:480px) {
+@media screen and (max-width:1280px) {
+    .container {
+        position: relative;
+        display: inherit;
+        flex-direction: inherit;
+        margin: 0 auto;
+        height: 100%;
+        width: 100%;
+    }
 
-    .hero-illustration picture {
+    .container:after {
+        content:'';
+        height: 104px;
+        width: 232px;
+        position: absolute;
+        bottom:0;
+        left:0;
+        background-image: url(./images/pod-shape.svg);
+        background-repeat: no-repeat;
+    }
+
+    .inner-hero {
+        padding: 0;
+    }
+
+    section {
+        top: 50px;
+        left: 40px;
+    }
+
+    .inner-hero:after {
         display: none;
     }
 
-    .hero-illustration .testmobile {
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        height: 100%;
-        width: 100%;
-        background-image: url(./images/pod-hero-mobile.jpg);
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
+    section .hero-copy {
+        width: 635px;
     }
 
+    section .hero-copy h1 {
+        font-size: 48px;
+    }
 }
 
+@media screen and (max-width:768px) {
 
+    .container:after {
+        display: none;
+    }
 
-/* HERO BRANDS */
-.hero-brands {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    display: flex;
-}
+    .inner-hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height:100%;
+    }
 
-@media screen and (max-width:768px) {}
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        right:0;
+        padding: 0 24px;
+    }
 
-.test {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    section header img {
+        margin: 0 auto;
+        width: 96px;
+    }
+
+    section .hero-copy {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        margin-top: initial;
+        background-color: transparent;
+    }
+
+    section .hero-copy h1 {
+        font-size: 26px;
+        margin: 74px 0 15px 0;
+    }
+
+    section .hero-copy p, section .hero-copy form {
+        max-width: inherit;
+    }
+
+    section .hero-copy p {
+        font-size:15px;
+    }
+
+    section .hero-copy form {
+        order: 4;
+        margin-top: 48px;
+    }
+
+    section .hero-copy form button {
+        position: initial;
+        min-width: initial;
+        width: 100%;
+        margin-top: 16px;
+    }
+
+    section .hero-copy .hero-brands {
+        order: 3;
+        margin-top: 15px;
+        justify-content: space-between;
+    }
+
+    section .hero-copy .hero-brands li + li {
+        margin-left: 24px;
+    }
 }
