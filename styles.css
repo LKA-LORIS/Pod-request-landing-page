@@ -140,6 +140,19 @@ section .hero-copy form button {
     min-width: 162px;
 }
 
+small {
+    position: absolute;
+    bottom: -22px;
+    left:32px;
+    font-size: 12px;
+    font-weight: 700;
+    color:#FB3E3E;
+}
+
+small.success {
+    color: #54E6AF;
+}
+
 section .hero-copy .hero-brands {
     list-style-type: none;
     padding:0;
@@ -147,6 +160,7 @@ section .hero-copy .hero-brands {
     align-items: center;
     margin-top: 64px;
     margin-bottom: 0;
+    opacity: 0.5;
 }
 
 section .hero-copy .hero-brands li + li {
@@ -249,6 +263,12 @@ section .hero-copy .hero-brands li + li {
     section .hero-copy form {
         order: 4;
         margin-top: 48px;
+    }
+
+    small {
+        bottom: -30px;
+        left: 0;
+        right: 0;
     }
 
     section .hero-copy form button {
