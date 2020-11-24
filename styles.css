@@ -100,6 +100,11 @@ section .hero-copy form {
     max-width: 427px;
 }
 
+section .hero-copy label {
+    position: absolute;
+    text-indent: -9999px;
+}
+
 section .hero-copy form input {
     display: flex;
     flex-direction: column;
